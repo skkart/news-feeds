@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route} from 'react-router-dom'
 import './assets/App.css'
 import Dashboard from './components/Dashboard'
 
-function App() {
+function App(props) {
   // State to track on google chart is loaded
   const [googleChartLoaded, setGoogleChartLoaded] = useState(false)
 
@@ -12,7 +12,10 @@ function App() {
     if (google && google.charts) {
       // Load Charts for only Line
       google.charts.load('current', { packages: ['corechart'] })
-      google.charts.setOnLoadCallback(() => setGoogleChartLoaded(true))
+      google.charts.setOnLoadCallback(() => {
+        setGoogleChartLoaded(true)
+        alert('Chart loaded')
+      })
     } else {
       // failed to load the google chart
       // Alert the user
@@ -31,7 +34,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="container">
-        <Route exact path="/" component={Dashboard} />
+        <Route exact={true} path="/" component={Dashboard} />
         <Route exact path="/dashboard/:pageNum" component={Dashboard} />
       </div>
     </BrowserRouter>
