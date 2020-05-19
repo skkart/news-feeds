@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Route} from 'react-router-dom'
+import { HashRouter, Route} from 'react-router-dom'
 import './assets/App.css'
 import Dashboard from './components/Dashboard'
 
@@ -14,7 +14,6 @@ function App(props) {
       google.charts.load('current', { packages: ['corechart'] })
       google.charts.setOnLoadCallback(() => {
         setGoogleChartLoaded(true)
-        alert('Chart loaded')
       })
     } else {
       // failed to load the google chart
@@ -32,12 +31,12 @@ function App(props) {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="container">
         <Route exact={true} path="/" component={Dashboard} />
         <Route exact path="/dashboard/:pageNum" component={Dashboard} />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
