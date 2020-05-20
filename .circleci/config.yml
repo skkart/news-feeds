@@ -11,7 +11,6 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
-workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+      - run:
+         name: Run Tests
+         command: npm test
