@@ -14,3 +14,7 @@ jobs:
       - run:
          name: Run Tests
          command: npm test
+workflows:
+    build-and-test:
+      jobs:
+        - build-and-test
