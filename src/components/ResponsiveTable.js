@@ -4,7 +4,7 @@ import upvote from '../assets/upvote.png'
 
 // This table is responsive and build specific for news feed UI
 export default function ResponsiveTable (props) {
-  
+
   // Function to get Headers for table
   const head = function() {
     const colMap = props.cols

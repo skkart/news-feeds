@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import config from '../config'
 import moment from 'moment'
 import ResponsiveTable from './ResponsiveTable'
-import config from '../config'
 import Chart from './Chart'
 
 export default function Dashboard(props) {
