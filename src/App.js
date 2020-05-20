@@ -18,8 +18,7 @@ function App(props) {
     } else {
       // failed to load the google chart
       // Alert the user
-      console.error('Problem in loading Google Charts. Please check!!!')
-      alert('Problem in loading Google Charts. Please check!!!')
+      console.log('Problem in loading Google Charts. Please check!!!')
     }
   }, [])
 
