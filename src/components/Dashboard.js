@@ -90,7 +90,7 @@ export default function Dashboard(props) {
         setRows(newDt)
       }
     } catch (e) {
-      console.log('Failed to load user chats', e)
+      console.log('Failed to load news feeds', e)
     } finally {
       // AT last reset the loader
       setLoading(false)
@@ -106,6 +106,7 @@ export default function Dashboard(props) {
       if (rowDt.id === id) {
         // For the found record, patch new changes
         if (isUpvote) {
+          // Since you have upvoted, increment vote point
           newRow[ind].points++
         }
         newRow[ind] = {
@@ -168,7 +169,7 @@ export default function Dashboard(props) {
   return (
     <div className="App">
       {loading ?
-        (<div className="loader"/>)
+        (<div className="loader" />)
         : (
           <div className="container">
             <ResponsiveTable cols={cols} rows={rows} onUpRowVote={onUpRowVote} onHideRow={onHideRow} />
